@@ -18,8 +18,6 @@ import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	// unica istanza della classe
-	public double metri = 0;
-	private static final DecimalFormat df = new DecimalFormat("0.00");
 	public static FlappyBird flappyBird;
 	// larghezza e altezza della finestra
 	public final int WIDTH = 800, HEIGHT = 800;
@@ -35,6 +33,9 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	public boolean gameOver, started;
 	// serve per la randomizzare la lunghezza dei tubi
 	public Random rand;
+	// serve per tener conto della distanza
+	public double metri = 0;
+	private static final DecimalFormat df = new DecimalFormat("0.00");
 
 	// costruttore in cui ogni 20 ms viene refreshato il jFrame definendo l' animazione
 	public FlappyBird() {
