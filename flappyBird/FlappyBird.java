@@ -12,13 +12,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Random;
-
+import java.text.DecimalFormat;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	// unica istanza della classe
-
+	public double metri = 0;
+	private static final DecimalFormat df = new DecimalFormat("0.00");
 	public static FlappyBird flappyBird;
 	// larghezza e altezza della finestra
 	public final int WIDTH = 800, HEIGHT = 800;
@@ -98,8 +99,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 			bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
 			columns.clear();
 			yMotion = 0;
-			score = 0;
 
+			score = 0;
+			// Reset dei metri (New Game)
+			this.metri = 0;
 			addColumn(true);
 			addColumn(true);
 			addColumn(true);
@@ -107,6 +110,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 			gameOver = false;
 		}
+		// Permette di calcolare i metri percorsi
+		if(!gameOver)
+			this.metri += 0.2;
+		System.out.println(df.format(metri));
 
 		// si indica che il gioco e' iniziato
 		if (!started) {
