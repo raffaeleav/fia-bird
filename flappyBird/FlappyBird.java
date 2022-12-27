@@ -18,6 +18,7 @@ import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	// unica istanza della classe
+
 	public static FlappyBird flappyBird;
 	// larghezza e altezza della finestra
 	public final int WIDTH = 800, HEIGHT = 800;
