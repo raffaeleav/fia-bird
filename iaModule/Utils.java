@@ -27,12 +27,12 @@ public class Utils {
     }
 
     // calcolare la distanza euclidea tra il Bird e il punto centrale 'libero'
-    public double getDistance(Rectangle bird){
-        return 0;
+    public double getDistance(double xBird, double yBird, Point point){
+        return point.distance(xBird, yBird);
     }
 
     // true jump, false no-jump
-    public boolean ObjectiveFunction(){
-        return false;
+    public boolean ObjectiveFunctionHillClimbing(){
+
     }
 }
