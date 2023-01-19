@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import static java.lang.Math.sqrt;
 
 public class Utils {
-    private final int distanzaConSalto = 2;
-    private final int distanzaSenzaSalto = 10;
 
     // metodo per calcolare il centro dello spazio libero tra 2 pipe
     public Point getPipeHole(Rectangle upperPipe, Rectangle bottomPipe){
@@ -41,8 +39,8 @@ public class Utils {
         // Se il bird non salta viene incrementato il valore di y di 2 poiché l'asse y è invertito
         // 0 Punto massimo
         // 676 Punto minimo
-        double noJumpDistance = getDistance(Bird.getX(), Bird.getY() + distanzaConSalto, pipeHole);
-        double JumpDistance = getDistance(Bird.getX(), Bird.getY() - distanzaSenzaSalto, pipeHole);
+        double noJumpDistance = getDistance(Bird.getX(), Bird.getY() + 2, pipeHole);
+        double JumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
 
 
         return !(noJumpDistance > JumpDistance);
