@@ -250,7 +250,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		}
 
 		if (!gameOver && started) {
-			g.drawString(String.valueOf(score), WIDTH / 2 - 25, 100);
+			g.drawString(String.valueOf(df.format(metri) + " m"), WIDTH / 2 - 150, 100);
 		}
 	}
 
