@@ -1,77 +1,46 @@
 package iaModule;
 
-import java.util.Arrays;
-import java.util.Random;
+import flappyBird.FlappyBird;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class HillClimbing {
-    private int[] currentSolution;
-    private int[] bestSolution;
-    private int currentFitness;
-    private int bestFitness;
-    private Random rand;
 
-    public HillClimbing(int size) {
-        currentSolution = new int[size];
-        bestSolution = new int[size];
-        rand = new Random();
-        initialize();
+    public HillClimbing() throws AWTException {}
+
+    public static void main(String[] args) throws AWTException {
+        FlappyBird.flappyBird = new FlappyBird();
+        climbHill();
     }
 
-    private void initialize() {
-        // generiamo una soluzione casuale iniziale
-        for (int i = 0; i < currentSolution.length; i++) {
-            currentSolution[i] = rand.nextInt(20);
-        }
-        currentFitness = calculateFitness(currentSolution);
-        bestFitness = currentFitness;
-        System.arraycopy(currentSolution, 0, bestSolution, 0, currentSolution.length);
-    }
+    public static void climbHill() throws AWTException {
+        Utils s = new Utils();
+        Robot robot = new Robot();
 
-    private int calculateFitness(int[] solution) {
-        // calcoliamo la fitness della soluzione passata come parametro
-        int fitness = 0;
-        for (int i = 0; i < solution.length; i++) {
-            fitness += solution[i] * solution[i];
-        }
-        return fitness;
-    }
+        while(true){
+            Rectangle birdPosition = FlappyBird.flappyBird.bird;
+            ArrayList<Rectangle> colums = FlappyBird.flappyBird.columns;
 
-    public void run() {
-        while (true) {
-            int[] newSolution = new int[currentSolution.length];
-            System.arraycopy(currentSolution, 0, newSolution, 0, currentSolution.length);
-            // generiamo una nuova soluzione modificando un singolo elemento
-            int index = rand.nextInt(newSolution.length);
-            newSolution[index] += rand.nextInt(10) - 5;
-            int newFitness = calculateFitness(newSolution);
-            if (newFitness < currentFitness) {
-                // la nuova soluzione è migliore, aggiorniamo la soluzione corrente
-                currentFitness = newFitness;
-                System.arraycopy(newSolution, 0, currentSolution, 0, currentSolution.length);
-                if (currentFitness < bestFitness) {
-                    // la nuova soluzione è anche migliore della soluzione migliore trovata finora
-                    bestFitness = currentFitness;
-                    System.arraycopy(currentSolution, 0, bestSolution, 0, currentSolution.length);
-                }
-            } else {
-                // la nuova soluzione non è migliore, terminiamo l'algoritmo
-                break;
+            System.out.println(colums.size());
+            int score = FlappyBird.flappyBird.score;
+
+
+            if(s.JumpObjectiveFunctionHillClimbing(colums.get((score + 1) % 8) ,colums.get((score) % 8),birdPosition)){
+                System.out.println("Salto!");
+                robot.keyRelease(KeyEvent.VK_SPACE);
+                robot.delay(20 * 11);
             }
+            else {
+
+                System.out.println("Non Salto!");
+                robot.delay(20 * 11);
+            }
+            System.out.println("Metri Percorsi: " + FlappyBird.flappyBird.metri);
         }
     }
 
-    public int[] getBestSolution() {
-        return bestSolution;
-    }
 
-    public int getBestFitness() {
-        return bestFitness;
-    }
-
-    public static void main(String[] args) {
-        HillClimbing hc = new HillClimbing(100);
-        hc.run();
-        System.out.println("Best solution: " + Arrays.toString(hc.getBestSolution()));
-        System.out.println("Best fitness: " + hc.getBestFitness());
-    }
 }
+
