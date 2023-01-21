@@ -37,10 +37,10 @@ public class HillClimbing {
                 System.out.println("Non Salto!");
                 robot.delay(20 * 11);
             }
+
             System.out.println("Metri Percorsi: " + FlappyBird.flappyBird.metri);
         }
     }
-
 
 }
 
