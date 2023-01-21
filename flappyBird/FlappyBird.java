@@ -169,10 +169,13 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 			// permette l' effettivo salto del bird
 			bird.y += yMotion;
+			/*
 			System.out.println("yMotion:" + yMotion);
 			System.out.print(bird.y + ",");
 			System.out.println(bird.x);
 			System.out.println("");
+
+			 */
 
 
 			for (Rectangle column : columns) {

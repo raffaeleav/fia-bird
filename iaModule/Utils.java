@@ -32,17 +32,18 @@ public class Utils {
     }
 
     // true jump, false no-jump
-    public boolean ObjectiveFunctionHillClimbing(Rectangle upperPipe, Rectangle bottomPipe, Rectangle Bird){
+    public boolean JumpObjectiveFunctionHillClimbing(Rectangle upperPipe, Rectangle bottomPipe, Rectangle Bird){
         // Punto centrale della pipe
         Point pipeHole = this.getPipeHole(upperPipe,bottomPipe);
 
         // Se il bird non salta viene incrementato il valore di y di 2 poiché l'asse y è invertito
         // 0 Punto massimo
         // 676 Punto minimo
-        double noJumpDistance = getDistance(Bird.getX(), Bird.getY() + 2, pipeHole);
-        double JumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
+        double nojumpdistance = getDistance(Bird.getX(), Bird.getY() + 2, pipeHole);
+        double jumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
+
+        return nojumpdistance <= jumpDistance ? false : true;
 
 
-        return !(noJumpDistance > JumpDistance);
     }
 }
