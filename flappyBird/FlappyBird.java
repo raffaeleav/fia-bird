@@ -45,7 +45,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	// costruttore in cui ogni 20 ms viene refreshato il jFrame definendo l' animazione
 	public FlappyBird() throws IOException {
 		this.backgroundSprite = ImageIO.read(new File("sprites/background.png"));
-		this.birdSprite = ImageIO.read(new File("sprites/bird.png"));
+		this.birdSprite = ImageIO.read(new File("sprites/fia.png"));
 		this.groundSprite = ImageIO.read(new File("sprites/ground.png"));
 
 		JFrame jframe = new JFrame();
@@ -235,7 +235,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		g.setColor(Color.red);
 		g.fillRect(bird.x, bird.y, bird.width, bird.height);
 
-		g.drawImage(birdSprite, bird.x, bird.y, bird.width, bird.height, renderer);
+		g.drawImage(birdSprite, bird.x - 10, bird.y - 10, bird.width + 20, bird.height + 20, renderer);
 
 		for (Rectangle column : columns) {
 			paintColumn(g, column);
@@ -252,7 +252,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 			i++;
 		}
 
-		g.setColor(Color.white);
+		g.setColor(new Color(69, 117, 214));
 		g.setFont(new Font("Arial", 1, 100));
 
 		if (!started) {
