@@ -9,7 +9,7 @@ public class Utils {
     // metodo per calcolare il centro dello spazio libero tra 2 pipe
     public Point getPipeHole(Rectangle upperPipe){
 
-        double x = upperPipe.getX() + 90;
+        double x = upperPipe.getX() + 50;
         double y = upperPipe.getY() - 90;
 
         return new Point( (int) x, (int) y);
