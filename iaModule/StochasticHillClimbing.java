@@ -4,13 +4,14 @@ import flappyBird.FlappyBird;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class StochasticHillClimbing {
 
     public StochasticHillClimbing() {}
 
-    public static void main(String[] args) throws AWTException {
+    public static void main(String[] args) throws AWTException, IOException {
         FlappyBird.flappyBird = new FlappyBird();
         stochasticClimbHill();
     }

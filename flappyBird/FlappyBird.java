@@ -9,13 +9,18 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.text.DecimalFormat;
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
+	public BufferedImage image ;
 	// unica istanza della classe
 	public static FlappyBird flappyBird;
 	// larghezza e altezza della finestra
@@ -37,7 +42,8 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	private static final DecimalFormat df = new DecimalFormat("0.00");
 
 	// costruttore in cui ogni 20 ms viene refreshato il jFrame definendo l' animazione
-	public FlappyBird() {
+	public FlappyBird() throws IOException {
+		this.image = ImageIO.read(new File("flappyBird/ff.png"));
 		JFrame jframe = new JFrame();
 		Timer timer = new Timer(20, this);
 
@@ -53,6 +59,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		jframe.addKeyListener(this);
 		jframe.setResizable(false);
 		jframe.setVisible(true);
+
+
+
+
 
 		bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
 		columns = new ArrayList<Rectangle>();
@@ -212,9 +222,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		renderer.repaint();
 	}
 
-	public void repaint(Graphics g) {
-		g.setColor(Color.cyan);
-		g.fillRect(0, 0, WIDTH, HEIGHT);
+	public void repaint(Graphics g) throws IOException {
+
+		g.drawImage(image,0,0,WIDTH,HEIGHT,renderer);
+
 
 		g.setColor(Color.orange);
 		g.fillRect(0, HEIGHT - 120, WIDTH, 120);
@@ -256,7 +267,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		flappyBird = new FlappyBird();
 	}
 
