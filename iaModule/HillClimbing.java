@@ -30,6 +30,7 @@ public class HillClimbing {
 
             int score = FlappyBird.flappyBird.score;
 
+            // caso in cui il vicino e' peggio dello stato attuale (nel caso in cui non abbia saltato)
             actualBirdPosition.x -= 10;
             actualBirdPosition.y -= 2;
             if(utils.distanceObjectiveFunction(colums.get((score * 2) % 8), actualBirdPosition)
