@@ -1,9 +1,8 @@
 package flappyBird;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Rectangle;
+import iaModule.Utils;
+
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -72,7 +71,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	public void addColumn(boolean start) {
 		int space = 300;
 		int width = 100;
-		int height = 50 + rand.nextInt(300);
+		int height = 250 + rand.nextInt(50);
 
 		// se il gioco e' partito crea due tubi uno sopra e uno sotto
 		if (start) {
@@ -169,14 +168,6 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 			// permette l' effettivo salto del bird
 			bird.y += yMotion;
-			/*
-			System.out.println("yMotion:" + yMotion);
-			System.out.print(bird.y + ",");
-			System.out.println(bird.x);
-			System.out.println("");
-
-			 */
-
 
 			for (Rectangle column : columns) {
 				// ogni volta che supera una coppia di tubi aumenta il punteggio
@@ -236,6 +227,17 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 		for (Rectangle column : columns) {
 			paintColumn(g, column);
+		}
+
+		// mostra il centro delle pipe
+		for(int i = 0; i < columns.size() - 1; i++){
+			Utils utils = new Utils();
+			Point p = utils.getPipeHole(columns.get((i * 2) % 8));
+
+			g.setColor(Color.yellow);
+			g.fillRect((int) p.getX(), (int) p.getY(), bird.width, bird.height);
+
+			i++;
 		}
 
 		g.setColor(Color.white);

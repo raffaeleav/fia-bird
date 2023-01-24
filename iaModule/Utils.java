@@ -1,27 +1,16 @@
 package iaModule;
 
-import flappyBird.*;
+import flappyBird.FlappyBird;
 
 import java.awt.*;
-import java.util.ArrayList;
-
-import static java.lang.Math.sqrt;
 
 public class Utils {
 
     // metodo per calcolare il centro dello spazio libero tra 2 pipe
-    public Point getPipeHole(Rectangle upperPipe, Rectangle bottomPipe){
-        // coordinate del centro della base inferiore del rettangolo superiore
-        double  yCentreBottomBaseUpper = upperPipe.getY() + upperPipe.getHeight(),
-                xCentreBottomBaseUpper = upperPipe.getX() + 150;
+    public Point getPipeHole(Rectangle upperPipe){
 
-        // coordinate del centro della base superiore del rettangolo inferiore
-        double  yCentreBottomBaseBottom = bottomPipe.getY(),
-                xCentreBottomBaseBottom = bottomPipe.getX() + 150;
-
-        // coordinate del punto in mezzo nello spazio libero
-        double y = (yCentreBottomBaseUpper + yCentreBottomBaseBottom) / 2;
-        double x = (xCentreBottomBaseUpper + xCentreBottomBaseBottom) / 2;
+        double x = upperPipe.getX() + 50;
+        double y = upperPipe.getY() - 90;
 
         return new Point( (int) x, (int) y);
     }
@@ -32,9 +21,9 @@ public class Utils {
     }
 
     // true jump, false no-jump
-    public boolean JumpObjectiveFunctionHillClimbing(Rectangle upperPipe, Rectangle bottomPipe, Rectangle Bird){
+    public boolean jumpObjectiveFunction(Rectangle upperPipe, Rectangle Bird){
         // Punto centrale della pipe
-        Point pipeHole = this.getPipeHole(upperPipe,bottomPipe);
+        Point pipeHole = this.getPipeHole(upperPipe);
 
         // Se il bird non salta viene incrementato il valore di y di 2 poiché l'asse y è invertito
         // 0 Punto massimo
@@ -43,7 +32,47 @@ public class Utils {
         double jumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
 
         return nojumpdistance <= jumpDistance ? false : true;
+    }
 
+    public double distanceObjectiveFunction(Rectangle upperPipe, Rectangle Bird){
+        Point pipeHole = this.getPipeHole(upperPipe);
 
+        // Se il bird non salta viene incrementato il valore di y di 2 poiché l'asse y è invertito
+        // 0 Punto massimo
+        // 676 Punto minimo
+        double nojumpdistance = getDistance(Bird.getX(), Bird.getY() + 2, pipeHole);
+        double jumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
+
+        return Math.min(nojumpdistance, jumpDistance);
+    }
+
+    // il metodo permette di riportare il JFrame all' azione precedente (in caso di salto)
+    public void rewindBirdJump(){
+        for (int i = 0; i < FlappyBird.flappyBird.columns.size(); i++) {
+            Rectangle column = FlappyBird.flappyBird.columns.get(i);
+
+            // permette di portare i tubi allo stato precedente, 10 rappresenta la velocita' a cui si muovono
+            column.x += 10;
+        }
+
+        // rimette il bird nella posizione precedente
+        FlappyBird.flappyBird.bird.y += 10;
+
+        FlappyBird.flappyBird.renderer.repaint();
+    }
+
+    // il metodo permette di riportare il JFrame all' azione precedente (in caso di non salto)
+    public void rewindBirdNoJump(){
+        for (int i = 0; i < FlappyBird.flappyBird.columns.size(); i++) {
+            Rectangle column = FlappyBird.flappyBird.columns.get(i);
+
+            // permette di portare i tubi allo stato precedente, 10 rappresenta la velocita' a cui si muovono
+            column.x += 10;
+        }
+
+        // rimette il bird nella posizione precedente
+        FlappyBird.flappyBird.bird.y -= 2;
+
+        FlappyBird.flappyBird.renderer.repaint();
     }
 }
