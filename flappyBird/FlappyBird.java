@@ -20,7 +20,8 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
-	public BufferedImage image ;
+	// sprites
+	public BufferedImage backgroundSprite, birdSprite, groundSprite;
 	// unica istanza della classe
 	public static FlappyBird flappyBird;
 	// larghezza e altezza della finestra
@@ -43,7 +44,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 	// costruttore in cui ogni 20 ms viene refreshato il jFrame definendo l' animazione
 	public FlappyBird() throws IOException {
-		this.image = ImageIO.read(new File("sprites/ff.png"));
+		this.backgroundSprite = ImageIO.read(new File("sprites/background.png"));
+		this.birdSprite = ImageIO.read(new File("sprites/bird.png"));
+		this.groundSprite = ImageIO.read(new File("sprites/ground.png"));
+
 		JFrame jframe = new JFrame();
 		Timer timer = new Timer(20, this);
 
@@ -59,10 +63,6 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		jframe.addKeyListener(this);
 		jframe.setResizable(false);
 		jframe.setVisible(true);
-
-
-
-
 
 		bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
 		columns = new ArrayList<Rectangle>();
@@ -81,7 +81,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	public void addColumn(boolean start) {
 		int space = 300;
 		int width = 100;
-		int height = 250 + rand.nextInt(50);
+		int height = 50 + rand.nextInt(300);
 
 		// se il gioco e' partito crea due tubi uno sopra e uno sotto
 		if (start) {
@@ -224,17 +224,18 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 	public void repaint(Graphics g) throws IOException {
 
-		g.drawImage(image,0,0,WIDTH,HEIGHT,renderer);
+		g.drawImage(backgroundSprite,0,0,WIDTH,HEIGHT,renderer);
 
-
-		g.setColor(Color.orange);
+		g.setColor(new Color(84, 47, 29));
 		g.fillRect(0, HEIGHT - 120, WIDTH, 120);
 
-		g.setColor(Color.green);
+		g.setColor(new Color(26, 122, 17));
 		g.fillRect(0, HEIGHT - 120, WIDTH, 20);
 
 		g.setColor(Color.red);
 		g.fillRect(bird.x, bird.y, bird.width, bird.height);
+
+		g.drawImage(birdSprite, bird.x, bird.y, bird.width, bird.height, renderer);
 
 		for (Rectangle column : columns) {
 			paintColumn(g, column);
