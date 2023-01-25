@@ -47,11 +47,11 @@ public class HillClimbing {
 
             if(utils.jumpObjectiveFunction(colums.get((score * 2) % 8), futureBirdPosition)){
                 robot.keyRelease(KeyEvent.VK_SPACE);
-                robot.delay(20 * 9);
+                robot.delay(25 * 9);
             }
 
             else {
-                robot.delay(20 * 9);
+                robot.delay(25 * 9);
             }
         }
     }

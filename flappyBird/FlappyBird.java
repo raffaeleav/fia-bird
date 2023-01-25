@@ -21,7 +21,7 @@ import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	// sprites
-	public BufferedImage backgroundSprite, birdSprite, groundSprite;
+	public BufferedImage backgroundSprite, birdSprite, groundSprite, coinSprite;
 	// unica istanza della classe
 	public static FlappyBird flappyBird;
 	// larghezza e altezza della finestra
@@ -47,9 +47,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		this.backgroundSprite = ImageIO.read(new File("sprites/background.png"));
 		this.birdSprite = ImageIO.read(new File("sprites/fia2.png"));
 		this.groundSprite = ImageIO.read(new File("sprites/ground.png"));
+		this.coinSprite = ImageIO.read(new File("sprites/coin.png"));
 
 		JFrame jframe = new JFrame();
-		Timer timer = new Timer(20, this);
+		Timer timer = new Timer(25, this);
 
 		renderer = new Renderer();
 		rand = new Random();
@@ -81,7 +82,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	public void addColumn(boolean start) {
 		int space = 300;
 		int width = 100;
-		int height = 50 + rand.nextInt(300);
+		int height = 50 + rand.nextInt(200);
 
 		// se il gioco e' partito crea due tubi uno sopra e uno sotto
 		if (start) {
@@ -143,7 +144,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// velocita' con cui vengono ridisegnati i tubi
-		int speed = 10;
+		int speed = 8;
 
 		// counter per gestire la gravita'
 		ticks++;
@@ -242,18 +243,16 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		}
 
 		// mostra il centro delle pipe
-		for(int i = 0; i < columns.size() - 1; i++){
+		for(int i = 0; i < columns.size(); i++){
 			Utils utils = new Utils();
 			Point p = utils.getPipeHole(columns.get((i * 2) % 8));
 
-			g.setColor(Color.yellow);
-			g.fillRect((int) p.getX(), (int) p.getY(), bird.width, bird.height);
 
-			i++;
+			g.drawImage(coinSprite,(int) p.getX() ,(int) p.getY(), bird.width + 10, bird.height + 10, renderer);
 		}
 
 		g.setColor(Color.white);
-		g.setFont(new Font("Arial", 1, 100));
+		g.setFont(new Font("Calibri", Font.BOLD, 90));
 
 		if (!started) {
 			g.drawString("Click to start!", 75, HEIGHT / 2 - 50);
