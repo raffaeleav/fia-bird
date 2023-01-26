@@ -52,11 +52,13 @@ public class Utils {
             Rectangle column = FlappyBird.flappyBird.columns.get(i);
 
             // permette di portare i tubi allo stato precedente, 10 rappresenta la velocita' a cui si muovono
-            column.x += 10;
+            column.x += 10 * 9;
         }
 
+        FlappyBird.flappyBird.metri -= 0.2;
+
         // rimette il bird nella posizione precedente
-        FlappyBird.flappyBird.bird.y += 10;
+        FlappyBird.flappyBird.bird.y += 10 * 9;
 
         FlappyBird.flappyBird.renderer.repaint();
     }
@@ -67,11 +69,13 @@ public class Utils {
             Rectangle column = FlappyBird.flappyBird.columns.get(i);
 
             // permette di portare i tubi allo stato precedente, 10 rappresenta la velocita' a cui si muovono
-            column.x += 10;
+            column.x += 10 * 9;
         }
 
+        FlappyBird.flappyBird.metri -= 0.2;
+
         // rimette il bird nella posizione precedente
-        FlappyBird.flappyBird.bird.y -= 2;
+        FlappyBird.flappyBird.bird.y -= 2 * 9;
 
         FlappyBird.flappyBird.renderer.repaint();
     }

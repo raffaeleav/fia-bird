@@ -19,14 +19,14 @@ public class HillClimbing {
 
     public static final int FRAME_SKIPPED = 9;
 
-    public HillClimbing() throws AWTException {}
+    public HillClimbing() {}
 
     public static void main(String[] args) throws AWTException, IOException, InterruptedException {
         FlappyBird.flappyBird = new FlappyBird();
         climbHill();
     }
 
-    public static void climbHill() throws AWTException, InterruptedException {
+    public static void climbHill() throws AWTException {
         Utils utils = new Utils();
         Robot robot = new Robot();
         ArrayList <Double> results = new ArrayList<>();
@@ -35,7 +35,7 @@ public class HillClimbing {
         while(true){
             Rectangle futureBirdPosition = FlappyBird.flappyBird.bird,
                     actualBirdPosition = (Rectangle) FlappyBird.flappyBird.bird.clone();
-            ArrayList<Rectangle> colums = FlappyBird.flappyBird.columns;
+            ArrayList<Rectangle> columns = FlappyBird.flappyBird.columns;
 
             if(FlappyBird.flappyBird.gameOver) {
                 double metri = FlappyBird.flappyBird.metri;
@@ -47,7 +47,6 @@ public class HillClimbing {
                 System.out.println("Il miglior risultato è stato " + df.format(Collections.max(results)) + "m 🏆");
                 System.out.println("");
                 System.out.println("");
-                //System.exit(0);
             }
 
             int score = FlappyBird.flappyBird.score;
@@ -55,28 +54,27 @@ public class HillClimbing {
             // caso in cui il vicino è peggio dello stato attuale (nel caso in cui non abbia saltato)
             actualBirdPosition.x -= 10;
             actualBirdPosition.y -= 2;
-            if(utils.distanceObjectiveFunction(colums.get((score * 2) % 8), actualBirdPosition)
-                    <= utils.distanceObjectiveFunction(colums.get((score * 2) % 8), futureBirdPosition)) {
+            if(utils.distanceObjectiveFunction(columns.get((score * 2) % 8), actualBirdPosition)
+                    <= utils.distanceObjectiveFunction(columns.get((score * 2) % 8), futureBirdPosition)) {
                 utils.rewindBirdNoJump();
             }
 
             // caso in cui il vicino è peggio dello stato attuale (nel caso in cui abbia saltato)
             actualBirdPosition.y += 12;
-            if(utils.distanceObjectiveFunction(colums.get((score * 2) % 8), actualBirdPosition)
-                    <= utils.distanceObjectiveFunction(colums.get((score * 2) % 8), futureBirdPosition)) {
+            if(utils.distanceObjectiveFunction(columns.get((score * 2) % 8), actualBirdPosition)
+                    <= utils.distanceObjectiveFunction(columns.get((score * 2) % 8), futureBirdPosition)) {
                 utils.rewindBirdJump();
             }
 
-            if(utils.jumpObjectiveFunction(colums.get((score * 2) % 8), futureBirdPosition)){
+            if(utils.jumpObjectiveFunction(columns.get((score * 2) % 8), futureBirdPosition)){
                 robot.keyRelease(KeyEvent.VK_SPACE);
 
-               // robot.delay(20 * FRAME_SKIPPED);
+                robot.delay(20 * FRAME_SKIPPED);
             }
 
             else {
-                //robot.delay(20 * FRAME_SKIPPED);
+                robot.delay(20 * FRAME_SKIPPED);
             }
-            sleep(20 * FRAME_SKIPPED);
 
         }
     }
