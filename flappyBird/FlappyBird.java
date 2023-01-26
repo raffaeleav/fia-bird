@@ -144,7 +144,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// velocita' con cui vengono ridisegnati i tubi
-		int speed = 8;
+		int speed = 10;
 
 		// counter per gestire la gravita'
 		ticks++;
