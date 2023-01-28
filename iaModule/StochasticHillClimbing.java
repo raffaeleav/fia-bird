@@ -16,6 +16,8 @@ public class StochasticHillClimbing {
     public static final String RESET = "\033[0m";
 
     public static final int FRAME_SKIPPED = 9;
+    public static final int JUMP_DISTANCE = 10;
+    public static final int NO_JUMP_DISTANCE = 2;
 
     public StochasticHillClimbing() {}
 
@@ -52,14 +54,14 @@ public class StochasticHillClimbing {
 
             // caso in cui il vicino è peggio dello stato attuale (nel caso in cui non abbia saltato)
             actualBirdPosition.x -= 10;
-            actualBirdPosition.y -= 2;
+            actualBirdPosition.y -= NO_JUMP_DISTANCE;
             if(utils.distanceObjectiveFunction(columns.get((score * 2) % 8), actualBirdPosition)
                     <= utils.distanceObjectiveFunction(columns.get((score * 2) % 8), futureBirdPosition)) {
                 utils.rewindBirdNoJump();
             }
 
             // caso in cui il vicino è peggio dello stato attuale (nel caso in cui abbia saltato)
-            actualBirdPosition.y += 12;
+            actualBirdPosition.y += JUMP_DISTANCE + 2;
             if(utils.distanceObjectiveFunction(columns.get((score * 2) % 8), actualBirdPosition)
                     <= utils.distanceObjectiveFunction(columns.get((score * 2) % 8), futureBirdPosition)) {
                 utils.rewindBirdJump();

@@ -5,6 +5,8 @@ import flappyBird.FlappyBird;
 import java.awt.*;
 
 public class Utils {
+    public static final int JUMP_DISTANCE = 10;
+    public static final int NO_JUMP_DISTANCE = 2;
 
     // metodo per calcolare il centro dello spazio libero tra 2 pipe
     public Point getPipeHole(Rectangle upperPipe){
@@ -28,8 +30,8 @@ public class Utils {
         // Se il bird non salta viene incrementato il valore di y di 2 poiché l'asse y è invertito
         // 0 Punto massimo
         // 676 Punto minimo
-        double nojumpdistance = getDistance(Bird.getX(), Bird.getY() + 2, pipeHole);
-        double jumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
+        double nojumpdistance = getDistance(Bird.getX(), Bird.getY() + NO_JUMP_DISTANCE, pipeHole);
+        double jumpDistance = getDistance(Bird.getX(), Bird.getY() - JUMP_DISTANCE, pipeHole);
 
         return nojumpdistance <= jumpDistance ? false : true;
     }
@@ -40,8 +42,8 @@ public class Utils {
         // Se il bird non salta viene incrementato il valore di y di 2 poiché l'asse y è invertito
         // 0 Punto massimo
         // 676 Punto minimo
-        double nojumpdistance = getDistance(Bird.getX(), Bird.getY() + 2, pipeHole);
-        double jumpDistance = getDistance(Bird.getX(), Bird.getY() - 10, pipeHole);
+        double nojumpdistance = getDistance(Bird.getX(), Bird.getY() + NO_JUMP_DISTANCE, pipeHole);
+        double jumpDistance = getDistance(Bird.getX(), Bird.getY() - JUMP_DISTANCE, pipeHole);
 
         return Math.min(nojumpdistance, jumpDistance);
     }
