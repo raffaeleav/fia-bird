@@ -29,9 +29,10 @@ Da **IntelliJ IDEA Ultimate** seguire i seguenti passaggi: *File* > *New* > *Pro
 ![image](https://user-images.githubusercontent.com/16355437/215322368-34426ef0-d153-4296-a851-926bfdfed0c0.png)
 <br>
 ### Esecuzione dell'algoritmo
-Accedi alla seguente directory: iaModule/, qui puoi scegliere tra due algoritmi:
+Dal package iaModule, si può scegliere quale algoritmo eseguire tra:
 - Hill Climbing 
 - Hill Climbing Stocastico.
+
 
 
 
