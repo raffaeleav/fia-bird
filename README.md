@@ -1,4 +1,6 @@
-# FIA Bird
+
+<img width="447" alt="d" src="https://user-images.githubusercontent.com/16355437/215737637-f72f6712-1799-4db7-900d-c1ad23006bfd.png">
+
 **Team components**
 
 
