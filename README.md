@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=![banner](https://github.com/raffaeleav/fia-bird/assets/114619463/2e8ea9ad-739f-4e58-98cb-70539385edf2) width ="512" heigth="120">
+  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/2e8ea9ad-739f-4e58-98cb-70539385edf2" width ="512" heigth="120">
 </p>
 
 <p align="center">
