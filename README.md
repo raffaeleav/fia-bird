@@ -7,7 +7,9 @@
 </p>
 
 ## Preview
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/16355437/216096523-34e72180-1b26-4527-8ccf-cd299a959f8b.gif)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16355437/216096523-34e72180-1b26-4527-8ccf-cd299a959f8b.gif">
+</p>
 
 
 ##Autori
