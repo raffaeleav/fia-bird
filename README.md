@@ -1,16 +1,10 @@
-<p align="center">
-  ![banner](https://github.com/raffaeleav/fia-bird/assets/114619463/2e8ea9ad-739f-4e58-98cb-70539385edf2)
-</p>
+![banner](https://github.com/raffaeleav/fia-bird/assets/114619463/2e8ea9ad-739f-4e58-98cb-70539385edf2)
+Una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di intelligenza artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno.
 
-<p align="center">
-  Una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di intelligenza artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno.
-</p>
 
 
 ## Preview
-<p align="center">
-  ![ezgif com-gif-maker](https://user-images.githubusercontent.com/16355437/216096523-34e72180-1b26-4527-8ccf-cd299a959f8b.gif)
-</p>
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/16355437/216096523-34e72180-1b26-4527-8ccf-cd299a959f8b.gif)
 
 
 ##Autori
