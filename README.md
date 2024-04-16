@@ -9,9 +9,8 @@
 
 ## Preview
 <p>
-  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a" width="256" heigth="256">
+  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a" width="384" heigth="384">
 </p>
-![preview](https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a)
 
 
 ## Autori
