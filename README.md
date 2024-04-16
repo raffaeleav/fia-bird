@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/2e8ea9ad-739f-4e58-98cb-70539385edf2" width ="512" heigth="120">
+  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/2e8ea9ad-739f-4e58-98cb-70539385edf2" width="512" heigth="120">
 </p>
 
 <p align="center">
@@ -8,6 +8,9 @@
 
 
 ## Preview
+<p>
+  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a" width="256" heigth="256">
+</p>
 ![preview](https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a)
 
 
