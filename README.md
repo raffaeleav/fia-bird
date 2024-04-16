@@ -7,9 +7,9 @@
 </p>
 
 ## Preview
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/16355437/216096523-34e72180-1b26-4527-8ccf-cd299a959f8b.gif">
-</p>
+https://github.com/raffaeleav/fia-bird/assets/114619463/12f6ec9c-634f-455e-84ad-91c604e3ccf0
+
+
 
 
 ## Autori
