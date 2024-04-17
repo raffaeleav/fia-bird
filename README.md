@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  Una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di intelligenza artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno.
+ Una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di Intelligenza Artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno. 
 </p>
 
 
