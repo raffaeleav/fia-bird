@@ -20,7 +20,7 @@
 | Menzione Michele | 0512109797 |
 
 
-## Introduzione
+## Descrizione del progetto
 Il progetto FIA Bird nasce con l’intento di sperimentare come l’intelligenza artificiale si può applicare ai videogiochi. Tra le varie possibili scelte nell’ambito videoludico è stato scelto il noto gioco Flappy Bird, utilizzando un’implementazione abbastanza
 simile al gioco originale, disponibile su GitHub: [Jaryt/FlappyBirdTutorial](https://github.com/Jaryt/FlappyBirdTutorial).
 <br>
