@@ -14,10 +14,10 @@
 
 
 ## Autori
-|Nome|Matricola|
-|----|---------|
-| Aviello Raffaele | 0512110529 |
-| Menzione Michele | 0512109797 |
+| Nome | Profilo GitHub |
+| ---- | --------- |
+| Aviello Raffaele | [raffaeleav](https://github.com/raffaeleav) |
+| Menzione Michele | [Michibit](https://github.com/Michibit) |
 
 
 ## Descrizione del progetto
