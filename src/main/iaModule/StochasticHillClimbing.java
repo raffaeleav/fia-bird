@@ -45,7 +45,7 @@ public class StochasticHillClimbing {
                         HillClimbing.RESET);
                 i++;
                 results.add(metri);
-                System.out.println("Il miglior risultato è stato " + df.format(Collections.max(results)) + "m 🏆");
+                System.out.println("Il miglior risultato è stato " + df.format(Collections.max(results)) + "m");
                 System.out.println("");
                 System.out.println("");
             }

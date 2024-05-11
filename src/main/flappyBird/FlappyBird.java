@@ -34,10 +34,10 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 	// costruttore in cui ogni 20 ms viene refreshato il jFrame definendo l' animazione
 	public FlappyBird() throws IOException {
-		this.backgroundSprite = ImageIO.read(new File("sprites/background.png"));
-		this.birdSprite = ImageIO.read(new File("sprites/fia2.png"));
-		this.groundSprite = ImageIO.read(new File("sprites/ground.png"));
-		this.coinSprite = ImageIO.read(new File("sprites/coin.png"));
+		this.backgroundSprite = ImageIO.read(new File("../../sprites/background.png"));
+		this.birdSprite = ImageIO.read(new File("../../sprites/fia2.png"));
+		this.groundSprite = ImageIO.read(new File("../../sprites/ground.png"));
+		this.coinSprite = ImageIO.read(new File("../../sprites/coin.png"));
 
 		JFrame jframe = new JFrame();
 		Timer timer = new Timer(25, this);
