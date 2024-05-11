@@ -31,7 +31,6 @@
   Il gioco consiste nel far passare l’agente intelligente (rappresentato dallo sprite di un robot) attraverso una serie di ostacoli rappresentati da tubi con l’obiettivo di riuscire a far volare l’agente il più lontano possibile.
 
 
-
 ## Preview
 <p>
   <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a" width="400" heigth="400">
