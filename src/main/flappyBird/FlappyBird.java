@@ -1,6 +1,6 @@
-package flappyBird;
+package main.flappyBird;
 
-import iaModule.Utils;
+import main.iaModule.Utils;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -20,25 +20,15 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 
 public class FlappyBird implements ActionListener, MouseListener, KeyListener {
-	// sprites
 	public BufferedImage backgroundSprite, birdSprite, groundSprite, coinSprite;
-	// unica istanza della classe
 	public static FlappyBird flappyBird;
-	// larghezza e altezza della finestra
 	public final int WIDTH = 800, HEIGHT = 800;
-	// un jPanel che si occupa di disegnare ogni volta gli elementi grafici
 	public Renderer renderer;
-	// rappresenta il Flappy Bird
 	public Rectangle bird;
-	// tubi
 	public ArrayList<Rectangle> columns;
-	// ticks = counter per diminuire la gravita', yMotion = gravita', score = punteggio
 	public int ticks, yMotion, score;
-	// variabili che definiscono se il gioco e' finito o e' iniziato
 	public boolean gameOver, started;
-	// serve per la randomizzare la lunghezza dei tubi
 	public Random rand;
-	// serve per tener conto della distanza
 	public double metri = 0;
 	private static final DecimalFormat df = new DecimalFormat("0.00");
 
@@ -59,7 +49,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		jframe.setTitle("Flappy Bird");
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.setSize(WIDTH, HEIGHT);
-		// si puo' saltare sia con click del mouse che con qualunque tasto della tastiera
+		
 		jframe.addMouseListener(this);
 		jframe.addKeyListener(this);
 		jframe.setResizable(false);
@@ -68,51 +58,46 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
 		columns = new ArrayList<Rectangle>();
 
-		// crea le prime 4 coppie di tubi
+		
 		addColumn(true);
 		addColumn(true);
 		addColumn(true);
 		addColumn(true);
 
-		// fa partire il timer
+		
 		timer.start();
 	}
 
-	// gestisce la crezione delle coppie di tubi
+	// metodo che gestisce la crezione delle coppie di tubi
 	public void addColumn(boolean start) {
 		int space = 300;
 		int width = 100;
 		int height = 50 + rand.nextInt(200);
 
-		// se il gioco e' partito crea due tubi uno sopra e uno sotto
 		if (start) {
 			columns.add(new Rectangle(WIDTH + width + columns.size() * 300, HEIGHT - height - 120, width, height));
 			columns.add(new Rectangle(WIDTH + width + (columns.size() - 1) * 300, 0, width, HEIGHT - height - space));
 		}
 
-		// si entra qui in actionPerformed quando la coppia di tubi arriva alla fine dello schermo ne viene creata un altra dopo l' ultima coppia di tubi
 		else {
 			columns.add(new Rectangle(columns.get(columns.size() - 1).x + 600, HEIGHT - height - 120, width, height));
 			columns.add(new Rectangle(columns.get(columns.size() - 1).x, 0, width, HEIGHT - height - space));
 		}
 	}
 
-	// colora le coppie di tubi
 	public void paintColumn(Graphics g, Rectangle column) {
 		g.setColor(Color.green.darker());
 		g.fillRect(column.x, column.y, column.width, column.height);
 	}
 
-	// permette di far partire il gioco
 	public void jump() {
-		// ogni volta che si perde se si preme un tasto si riparte con il gioco
 		if (gameOver) {
 			bird = new Rectangle(WIDTH / 2 - 10, HEIGHT / 2 - 10, 20, 20);
 			columns.clear();
 			yMotion = 0;
 
 			score = 0;
-			// Reset dei metri (New Game)
+			
 			this.metri = 0;
 			addColumn(true);
 			addColumn(true);
@@ -121,16 +106,14 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 
 			gameOver = false;
 		}
-		// Permette di calcolare i metri percorsi
+		
 		if(!gameOver)
 			this.metri += 0.2;
 
-		// si indica che il gioco e' iniziato
 		if (!started) {
 			started = true;
 		}
 
-		// si gestisce la gravita' quando finisce il gioco decrementando yMotion
 		else if (!gameOver) {
 			if (yMotion > 0) {
 				yMotion = 0;
@@ -140,24 +123,20 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		}
 	}
 
-	// chiamata ogni volta che viene clickato il mouse, fa saltare il bird e gestisce la gravita'
+	// metodo chiamato ogni volta che viene clickato il mouse, fa saltare il bird e gestisce la gravità
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// velocita' con cui vengono ridisegnati i tubi
 		int speed = 10;
 
-		// counter per gestire la gravita'
 		ticks++;
 
 		if (started) {
 			for (int i = 0; i < columns.size(); i++) {
 				Rectangle column = columns.get(i);
 
-				// permette lo scorrimento dei tubi
 				column.x -= speed;
 			}
 
-			// ogni 2 click si abbassa la gravita'
 			if (ticks % 2 == 0 && yMotion < 15) {
 				yMotion += 2;
 			}
@@ -165,32 +144,25 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 			for (int i = 0; i < columns.size(); i++) {
 				Rectangle column = columns.get(i);
 
-				// quando i tubi 'escono dallo schermo', scorrendo, vengono rimossi
 				if (column.x + column.width < 0) {
 					columns.remove(column);
 
-					// se la coppia di tubi sta all' inizio dello schermo, ne crea un' altra coppia
-					if (column.y == 0)
-					{
+					if (column.y == 0) {
 						addColumn(false);
 					}
 				}
 			}
 
-			// permette l' effettivo salto del bird
 			bird.y += yMotion;
 
 			for (Rectangle column : columns) {
-				// ogni volta che supera una coppia di tubi aumenta il punteggio
 				if (column.y == 0 && bird.x + bird.width / 2 > column.x + column.width / 2 - 10 && bird.x + bird.width / 2 < column.x + column.width / 2 + 10) {
 					score++;
 				}
 
-				// permette il game over
 				if (column.intersects(bird)) {
 					gameOver = true;
 
-					// animazione del bird che rimane per terra
 					if (bird.x <= column.x) {
 						bird.x = column.x - bird.width;
 
@@ -207,19 +179,16 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 				}
 			}
 
-			// se si tocca il terreno e' game over
 			if (bird.y > HEIGHT - 120 || bird.y < 0) {
 				gameOver = true;
 			}
 
-			// se si salta troppo in alto e' game over
 			if (bird.y + yMotion >= HEIGHT - 120) {
 				bird.y = HEIGHT - 120 - bird.height;
 				gameOver = true;
 			}
 		}
 
-		// ridisegna il frame ogni volta che si preme
 		renderer.repaint();
 	}
 
@@ -242,7 +211,6 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 			paintColumn(g, column);
 		}
 
-		// mostra il centro delle pipe
 		for(int i = 0; i < columns.size(); i++){
 			Utils utils = new Utils();
 			Point p = utils.getPipeHole(columns.get((i * 2) % 8));
@@ -271,13 +239,11 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		flappyBird = new FlappyBird();
 	}
 
-	// evento di click del mouse
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		jump();
 	}
 
-	// evento di rilascio della spacebar
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
