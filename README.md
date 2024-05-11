@@ -3,14 +3,17 @@
 </p>
 
 <p align="center">
- Una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di Intelligenza Artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno. 
+ FIA Bird è una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di Intelligenza Artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno. 
 </p>
 
 
-## Preview
-<p>
-  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a" width="512" heigth="512">
-</p>
+## Table of Contents
+- [Autori](#Autori)
+- [About](#About)
+- [Preview](#Preview)
+- [Esecuzione dell'algoritmo](#Esecuzione-dell'algoritmo)
+- [Dipendenze](#Dipendenze)
+- [Built with](#Built-with)
 
 
 ## Autori
@@ -20,18 +23,26 @@
 | Menzione Michele | [Michibit](https://github.com/Michibit) |
 
 
-## Descrizione del progetto
-Il progetto FIA Bird nasce con l’intento di sperimentare come l’intelligenza artificiale si può applicare ai videogiochi. Tra le varie possibili scelte nell’ambito videoludico è stato scelto il noto gioco Flappy Bird, utilizzando un’implementazione abbastanza
-simile al gioco originale, disponibile su GitHub: [Jaryt/FlappyBirdTutorial](https://github.com/Jaryt/FlappyBirdTutorial).
-<br>
-Lo **scopo** del progetto è quello di creare un’IA in grado di giocare a Flappy Bird in modo autonomo.
-Il gioco consiste nel far passare l’agente (rappresentato dallo sprite di un robot) attraverso una serie di ostacoli rappresentati da tubi con l’obiettivo di riuscire a far volare l’agente il più lontano possibile, senza urtarli.
+## About 
+<p>
+  FIA Bird è una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di Intelligenza Artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno. 
+  FIA Bird nasce con l’intento di sperimentare come l’intelligenza artificiale si può applicare ai videogiochi. Tra le varie possibili scelte nell’ambito videoludico è stato scelto il noto gioco Flappy Bird, utilizzando 
+  un’[implementazione](https://github.com/Jaryt/FlappyBirdTutorial) abbastanza simile al gioco originale (che questa repository ha forkato).
+  Lo scopo del progetto è quello di applicare gli algoritmi di ricerca studiati, sul framework del gioco in modo da far funzionare il gioco automaticamente.
+  Il gioco consiste nel far passare l’agente intelligente (rappresentato dallo sprite di un robot) attraverso una serie di ostacoli rappresentati da tubi con l’obiettivo di riuscire a far volare l’agente il più lontano possibile.
+</p>
+
+
+## Preview
+<p>
+  <img src="https://github.com/raffaeleav/fia-bird/assets/114619463/14afa6ef-8956-4ce0-b435-8c5011dc7c6a" width="400" heigth="400">
+</p>
 
 
 ## Esecuzione dell'algoritmo
 Dal package iaModule, si può scegliere quale algoritmo eseguire tra:
-- Hill Climbing
-- Hill Climbing Stocastico
+- Hill Climbing;
+- Hill Climbing Stocastico.
 
 
 ## Dipendenze
