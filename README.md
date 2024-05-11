@@ -24,13 +24,12 @@
 
 
 ## About 
-<p>
   FIA Bird è una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di Intelligenza Artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno. 
   FIA Bird nasce con l’intento di sperimentare come l’intelligenza artificiale si può applicare ai videogiochi. Tra le varie possibili scelte nell’ambito videoludico è stato scelto il noto gioco Flappy Bird, utilizzando 
   un’[implementazione](https://github.com/Jaryt/FlappyBirdTutorial) abbastanza simile al gioco originale (che questa repository ha forkato).
   Lo scopo del progetto è quello di applicare gli algoritmi di ricerca studiati, sul framework del gioco in modo da far funzionare il gioco automaticamente.
   Il gioco consiste nel far passare l’agente intelligente (rappresentato dallo sprite di un robot) attraverso una serie di ostacoli rappresentati da tubi con l’obiettivo di riuscire a far volare l’agente il più lontano possibile.
-</p>
+
 
 
 ## Preview
