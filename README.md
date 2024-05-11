@@ -36,3 +36,7 @@ Dal package iaModule, si può scegliere quale algoritmo eseguire tra:
 
 ## Dipendenze
 - [JDK 19](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19")
+
+
+## Built with 
+- [Java](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19") - per la realizzazione degli algoritmi di ricerca.
