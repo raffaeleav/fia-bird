@@ -50,4 +50,5 @@ Dal package iaModule, si può scegliere quale algoritmo eseguire tra:
 
 
 ## Built with 
-- [Java](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19") - per la realizzazione degli algoritmi di ricerca.
+- [Java](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19") - per la realizzazione degli algoritmi di ricerca e l'applicazione degli sprite.
+- [Piskel](https://www.piskelapp.com/) - per la realizzazione degli sprite.
