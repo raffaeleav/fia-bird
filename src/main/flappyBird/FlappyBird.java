@@ -32,12 +32,13 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 	public double metri = 0;
 	private static final DecimalFormat df = new DecimalFormat("0.00");
 
-	// costruttore in cui ogni 20 ms viene refreshato il jFrame definendo l' animazione
+	// costruttore in cui ogni 20 ms viene refreshato il JFrame definendo l'animazione
 	public FlappyBird() throws IOException {
-		this.backgroundSprite = ImageIO.read(new File("../../sprites/background.png"));
-		this.birdSprite = ImageIO.read(new File("../../sprites/fia2.png"));
-		this.groundSprite = ImageIO.read(new File("../../sprites/ground.png"));
-		this.coinSprite = ImageIO.read(new File("../../sprites/coin.png"));
+		String currentDir = System.getProperty("user.dir");
+		this.backgroundSprite = ImageIO.read(new File(currentDir + "/sprites/background.png"));
+		this.birdSprite = ImageIO.read(new File(currentDir + "/sprites/fia2.png"));
+		this.groundSprite = ImageIO.read(new File(currentDir + "/sprites/ground.png"));
+		this.coinSprite = ImageIO.read(new File(currentDir + "/sprites/coin.png"));
 
 		JFrame jframe = new JFrame();
 		Timer timer = new Timer(25, this);
@@ -123,7 +124,7 @@ public class FlappyBird implements ActionListener, MouseListener, KeyListener {
 		}
 	}
 
-	// metodo chiamato ogni volta che viene clickato il mouse, fa saltare il bird e gestisce la gravità
+	// metodo chiamato ogni volta che viene clickato il mouse, fa saltare l'agente e gestisce la gravità
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int speed = 10;
