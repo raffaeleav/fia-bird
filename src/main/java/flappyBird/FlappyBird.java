@@ -1,6 +1,6 @@
 package flappybird;
 
-import iaModule.Utils;
+import iamodule.Utils;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
