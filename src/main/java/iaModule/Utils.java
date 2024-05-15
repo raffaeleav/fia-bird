@@ -1,6 +1,6 @@
-package iaModule;
+package iamodule;
 
-import flappyBird.FlappyBird;
+import flappybird.FlappyBird;
 
 import java.awt.*;
 
