@@ -11,7 +11,7 @@
 - [Autori](#Autori)
 - [About](#About)
 - [Preview](#Preview)
-- [Esecuzione dell'algoritmo](#Esecuzione-dell'algoritmo)
+- [Funzionalità](#Funzionalità)
 - [Dipendenze](#Dipendenze)
 - [Built with](#Built-with)
 
@@ -37,10 +37,9 @@
 </p>
 
 
-## Esecuzione dell'algoritmo
-Dal package iaModule, si può scegliere quale algoritmo eseguire tra:
-- Hill Climbing;
-- Hill Climbing Stocastico.
+## Funzionalità
+1) Algoritmo Hill Climbing
+2) Algoritmo Hill Climbing Stocastico
 
 
 ## Dipendenze
