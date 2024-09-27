@@ -3,31 +3,37 @@
 </p>
 
 <p align="center">
-  Una rivisitazione del gioco Flappy Bird con intelligenza artificiale sviluppata come progetto per l'insegnamento di Fondamenti di Intelligenza Artificiale, del corso di Laurea in Informatica dell'Università degli Studi di Salerno. 
+  A remake of the Flappy Bird game with Artificial Intelligence developed as a project for the Fondamenti di Intelligenza Artificiale (Fundamentals of Artificial Intelligence) course, part of the Computer Science Bachelor's Degree program at the University of Salerno
 </p>
 
 
 ## Table of Contents
-- [Autori](#Autori)
+- [Authors](#Authors)
 - [About](#About)
 - [Preview](#Preview)
-- [Funzionalità](#Funzionalità)
-- [Dipendenze](#Dipendenze)
+- [Features](#Features)
+- [Dependencies](#Dependencies)
 - [Built with](#Built-with)
 
 
-## Autori
-| Nome | Profilo GitHub |
+## Authors
+| Name | Github profile |
 | ---- | --------- |
 | Aviello Raffaele | [raffaeleav](https://github.com/raffaeleav) |
 | Menzione Michele | [Michibit](https://github.com/Michibit) |
 
 
 ## About 
-  FIA Bird nasce con l’intento di sperimentare come l’intelligenza artificiale si può applicare ai videogiochi. Tra le varie possibili scelte nell’ambito videoludico è stato scelto il noto gioco Flappy Bird, utilizzando 
-  un’[implementazione](https://github.com/Jaryt/FlappyBirdTutorial) abbastanza simile al gioco originale (che questa repository ha forkato).
-  Lo scopo del progetto è quello di applicare gli algoritmi di ricerca studiati, sul framework del gioco in modo da far funzionare il gioco automaticamente.
-  Il gioco consiste nel far passare l’agente intelligente (rappresentato dallo sprite di un robot) attraverso una serie di ostacoli rappresentati da tubi con l’obiettivo di riuscire a far volare l’agente il più lontano possibile.
+  FIA Bird was developed with the goal of experimenting 
+how artificial intelligence can be applied to video games. 
+The underlying game that this project uses is an implementation that is quite similar to the original game (which this repository has forked).
+The purpose of 
+the project is to apply the studied local search algorithms to the game's 
+framework in order to make the game function automatically. 
+The game 
+consists of guiding the intelligent agent (represented by a robot sprite) 
+through a series of obstacles represented by pipes, with the goal of making 
+the agent fly as far as possible.
 
 
 ## Preview
@@ -36,15 +42,15 @@
 </p>
 
 
-## Funzionalità
-1) Algoritmo Hill Climbing
-2) Algoritmo Hill Climbing Stocastico
+## Features
+1) Hill Climbing algortithm
+2) Stochastic Hill Climbing algortithm
 
 
-## Dipendenze
+## Dependencies
 - [JDK 19](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19")
 
 
 ## Built with 
-- [Java](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19") - per la realizzazione degli algoritmi di ricerca e l'applicazione degli sprite.
-- [Piskel](https://www.piskelapp.com/) - per la realizzazione degli sprite.
+- [Java](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19") - used for the implementation of the local search algorithms
+- [Piskel](https://www.piskelapp.com/) - used for the sprites
