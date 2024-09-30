@@ -12,7 +12,7 @@
 - [About](#About)
 - [Preview](#Preview)
 - [Features](#Features)
-- [How to replicate](How-to-replicate)
+- [How to replicate](#How-to-replicate)
 - [Dependencies](#Dependencies)
 - [Built with](#Built-with)
 
