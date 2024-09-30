@@ -9,7 +9,7 @@
 
 ## Table of Contents
 - [Authors](#Authors)
-- [About](#About)
+- [Overview](#Overview)
 - [Preview](#Preview)
 - [Features](#Features)
 - [How to replicate](#How-to-replicate)
@@ -24,7 +24,7 @@
 | Menzione Michele | [Michibit](https://github.com/Michibit) |
 
 
-## About 
+## Overview 
   FIA Bird was developed with the goal of experimenting 
 how artificial intelligence can be applied to video games. 
 The underlying game that this project uses is an implementation that is quite similar to the original game (which this repository has forked).
