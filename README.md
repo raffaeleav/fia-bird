@@ -12,6 +12,7 @@
 - [About](#About)
 - [Preview](#Preview)
 - [Features](#Features)
+- [How to replicate](How-to-replicate)
 - [Dependencies](#Dependencies)
 - [Built with](#Built-with)
 
@@ -45,6 +46,29 @@ the agent fly as far as possible.
 ## Features
 1) Hill Climbing algortithm
 2) Stochastic Hill Climbing algortithm
+
+
+## How to replicate
+1) Clone the repository
+```bash
+git clone https://github.com/raffaeleav/fia-bird.git
+```
+2) Switch to the project directory
+```bash
+cd fia-bird
+```
+3) Compile the project
+```bash
+javac $(find . -name "*.java")
+```
+4) Run the game with the Hill Climbing algorithm 
+```bash
+java -cp ./src/main/java iamodule.HillClimbing
+```
+5) Alternatively, run the game with the Stochastic Hill Climbing algorithm 
+```bash
+java -cp ./src/main/java iamodule.StochasticHillClimbing
+```
 
 
 ## Dependencies
