@@ -12,8 +12,8 @@
 - [Overview](#Overview)
 - [Preview](#Preview)
 - [Features](#Features)
-- [How to replicate](#How-to-replicate)
 - [Dependencies](#Dependencies)
+- [How to replicate](#How-to-replicate)
 - [Built with](#Built-with)
 
 
@@ -48,6 +48,10 @@ the agent fly as far as possible.
 2) Stochastic Hill Climbing algortithm
 
 
+## Dependencies
+- [JDK 19](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19")
+
+
 ## How to replicate
 1) Clone the repository
 ```bash
@@ -69,10 +73,6 @@ java -cp ./src/main/java iamodule.HillClimbing
 ```bash
 java -cp ./src/main/java iamodule.StochasticHillClimbing
 ```
-
-
-## Dependencies
-- [JDK 19](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19")
 
 
 ## Built with 
