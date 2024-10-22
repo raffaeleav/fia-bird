@@ -12,7 +12,7 @@
 - [Overview](#Overview)
 - [Preview](#Preview)
 - [Features](#Features)
-- [Dependencies](#Dependencies)
+- [Requirements](#Requirements)
 - [How to replicate](#How-to-replicate)
 - [Built with](#Built-with)
 
@@ -48,7 +48,7 @@ the agent fly as far as possible.
 2) Stochastic Hill Climbing algortithm
 
 
-## Dependencies
+## Requirements
 - [JDK 19](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19")
 
 
