@@ -44,8 +44,8 @@ the agent fly as far as possible.
 
 
 ## Features
-1) Hill Climbing algortithm
-2) Stochastic Hill Climbing algortithm
+1) Hill Climbing algorithm
+2) Stochastic Hill Climbing algorithm
 
 
 ## Requirements
