@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  A remake of the Flappy Bird game with Artificial Intelligence developed as a project for the Fondamenti di Intelligenza Artificiale (Fundamentals of Artificial Intelligence) course, part of the Computer Science Bachelor's Degree program at the University of Salerno
+  A Flappy Bird remake with Artificial Intelligence developed as a project for the Fondamenti di Intelligenza Artificiale (Fundamentals of Artificial Intelligence) course, part of the Computer Science Bachelor's Degree program at the University of Salerno
 </p>
 
 
