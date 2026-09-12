@@ -14,7 +14,6 @@
 - [Features](#Features)
 - [Requirements](#Requirements)
 - [How to replicate](#How-to-replicate)
-- [Built with](#Built-with)
 
 
 ## Authors
@@ -73,8 +72,3 @@ java -cp ./src/main/java iamodule.HillClimbing
 ```bash
 java -cp ./src/main/java iamodule.StochasticHillClimbing
 ```
-
-
-## Built with 
-- [Java](https://www.oracle.com/java/technologies/downloads/#java19 "JDK 19") - used for the implementation of the local search algorithms
-- [Piskel](https://www.piskelapp.com/) - used for the sprites
